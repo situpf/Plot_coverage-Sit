@@ -1,3 +1,4 @@
+#!/usr/bin/env RScript
 # setwd("/homes/users/mtormo/scratch/test_rscript_coverage")
 # win <- "5k"
 # filein <- "basecall_trimmed_sort_primary.mosdepth5k.regions.bed.regions.bed"
