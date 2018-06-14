@@ -19,7 +19,7 @@
 #El $1 es el tamany de la window desitjada per el depth i el $2 es l'arxiu bam a analitzar i el $3 es el path sencer al arxiu de R 
 
 # if less than three arguments supplied, display usage 
-	if [  $# -le 2 ] || [ $1 == "--help"] || [ $1 == "-h"]
+	if [  $# -le 2 ] || [ $1 == "--help" ] || [ $1 == "-h" ]
 	then 
 
 		echo -e "\nUsage:\nsbatch --export=PATH=\$PATH:path/of/R/script/ depth.sh <window_width> <file.bam> <output/desired/path/> \n" 
