@@ -1,22 +1,18 @@
 #!/bin/bash 
 
-#SBATCH --job-name=grep
+#SBATCH --job-name=plot_cov
 
 #SBATCH --cpus-per-task=1
 
-#SBATCH --mem-per-cpu=12G
+#SBATCH --mem-per-cpu=8G
 
 #SBATCH -o slurm.%j.out
 
 #SBATCH -e slurm.%j.err
 
-#SBATCH --mail-type=END
+##SBATCH --mail-type=END
 
-#SBATCH --mail-user=winona.oliveros01@estudiant.upf.edu
-
-#SBATCH --export=ALL
-
-#El $1 es el tamany de la window desitjada per el depth i el $2 es l'arxiu bam a analitzar i el $3 es el path sencer al arxiu de R 
+##SBATCH --mail-user=
 
 # if less than three arguments supplied, display usage 
 	if [  $# -le 2 ] || [ $1 == "--help" ] || [ $1 == "-h" ]
@@ -35,7 +31,6 @@
 		exit 1
 	fi 
  
-# check whether user had supplied -h or --help . If yes display usage 
 
 
 
