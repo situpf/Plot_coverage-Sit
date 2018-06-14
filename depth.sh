@@ -18,12 +18,37 @@
 
 #El $1 es el tamany de la window desitjada per el depth i el $2 es l'arxiu bam a analitzar i el $3 es el path sencer al arxiu de R 
 
+# if less than three arguments supplied, display usage 
+	if [  $# -le 2 ] || [ $1 == "--help"] || [ $1 == "-h"]
+	then 
+
+		echo "This script must be run with super-user privileges." 
+		echo -e "\nUsage:\nsbatch --export=PATH=\$PATH:path/of/R/script/ depth.sh <window_width> <file.bam> <output/desired/path/> \n" 
+		echo 
+		echo "OPTIONS: "
+		echo
+		echo "--export=PATH=\$PATH:path/of/R/script/		This is MANDATORY, you have to specify the path were you have stored the Rscript for creating the plot."
+		echo
+		echo "<window_width>:			Enter a value designing the desired window width for calculating the depth coverage."
+		echo "<file.bam>:			Specify the input BAM file, enter the whole path."
+		echo "<output/desired/path/>		Specify the desired path where you want to save the output files."
+		echo
+		exit 1
+	fi 
+ 
+# check whether user had supplied -h or --help . If yes display usage 
+
+
+
+echo $PATH	
 
 module load mosdepth/0.2.3-foss-2016b
 
+fbname=$(basename $2 | cut -d. -f1)
+
 date
 
-mosdepth.1 -t 4 -n -b $1 $2_$1 $2
+mosdepth.1 -t 4 -n -b $1 $3$fbname_$1 $2
 
 date
 
@@ -31,7 +56,7 @@ module load R/3.4.2-foss-2016b
 
 date 
 
-Rscript $3 $1 $2_$1.regions.bed.gz
+coverage_in_windows_singlepage.R $1 $3$fbname_$1.regions.bed.gz $3
 
 date
 
