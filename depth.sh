@@ -22,7 +22,6 @@
 	if [  $# -le 2 ] || [ $1 == "--help"] || [ $1 == "-h"]
 	then 
 
-		echo "This script must be run with super-user privileges." 
 		echo -e "\nUsage:\nsbatch --export=PATH=\$PATH:path/of/R/script/ depth.sh <window_width> <file.bam> <output/desired/path/> \n" 
 		echo 
 		echo "OPTIONS: "
