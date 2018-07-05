@@ -32,7 +32,7 @@
 	fi 
  
 
-
+export PATH:$PATH="path/of/R/script/"
 
 echo $PATH	
 
