@@ -36,7 +36,7 @@ fbname=$(basename $2 | cut -d. -f1)
 
 date
 
-mosdepth.1 -t 4 -n -b $1 $3$fbname\_$1 $2
+mosdepth.1 -t 4 -n -b $1 $3/$fbname\_$1 $2
 
 date
 
@@ -44,7 +44,7 @@ module load R/3.4.2-foss-2016b
 
 date 
 
-coverage_in_windows_singlepage.R $1 $3$fbname\_$1.regions.bed.gz $3$fbname\_$1 
+coverage_in_windows_singlepage.R $1 $3/$fbname\_$1.regions.bed.gz $3/$fbname\_$1 
 
 date
 
