@@ -34,3 +34,9 @@ This is an example of the usage of this script:
 ```bash
 sbatch depth.sh 100 /users/Desktop/bams/h_sap_2039.bam /users/Desktop/bams/results/
 ```
+## Output
+
+On your specified output directory you'll find several files. First, there are the ones from the depth calculation with the mosdepth software. The most important is the one ending with *regions.bed.gz*. This file contains de coverage depth calculation for the specified window, and is the one used to do the plot. 
+
+Then you'll have a pdf file names as the basename of the bam file used as input and ending with *_window.pdf* where window stands for the value of the specified window length for the depth coverage calculation. In here you'll have a visual representation of the distribution of the coverage along each chromosome. 
+
