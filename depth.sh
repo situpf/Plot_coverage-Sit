@@ -10,19 +10,13 @@
 
 #SBATCH -e slurm.%j.err
 
-##SBATCH --mail-type=END
-
-##SBATCH --mail-user=
-
 # if less than three arguments supplied, display usage 
 	if [  $# -le 2 ] || [ $1 == "--help" ] || [ $1 == "-h" ]
 	then 
 
-		echo -e "\nUsage:\nsbatch --export=PATH=\$PATH:path/of/R/script/ depth.sh <window_width> <file.bam> <output/desired/path/> \n" 
+		echo -e "\nUsage:\nsbatch depth.sh <window_width> <file.bam> <output/desired/path/> \n" 
 		echo 
 		echo "OPTIONS: "
-		echo
-		echo "--export=PATH=\$PATH:path/of/R/script/		This is MANDATORY, you have to specify the path were you have stored the Rscript for creating the plot."
 		echo
 		echo "<window_width>:			Enter a value designing the desired window width for calculating the depth coverage."
 		echo "<file.bam>:			Specify the input BAM file, enter the whole path."
